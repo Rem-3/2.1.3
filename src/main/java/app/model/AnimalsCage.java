@@ -8,21 +8,25 @@ import java.lang.annotation.*;
 
 @Component
 public class AnimalsCage {
-    @Autowired
-    private Timer bean;
+    private Timer timer;
     @Autowired
     private Animal animal;
+
+    public AnimalsCage(Timer timer) {
+        this.timer = timer;
+    }
+    public Timer getTimer() {
+        return timer;
+    }
 
 
     public void whatAnimalSay() {
         System.out.println("Say:");
         System.out.println(animal.toString());
         System.out.println("At:");
-        System.out.println(bean.getTime());
+        System.out.println(timer.getTime());
         System.out.println("________________________");
     }
 
-    public Timer getTimer() {
-        return bean;
-    }
+
 }

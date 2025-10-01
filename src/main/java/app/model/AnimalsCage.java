@@ -10,6 +10,7 @@ import java.lang.annotation.*;
 public class AnimalsCage {
     private Timer timer;
     @Autowired
+    @Qualifier("dogbean")
     private Animal animal;
 
     public AnimalsCage(Timer timer) {
